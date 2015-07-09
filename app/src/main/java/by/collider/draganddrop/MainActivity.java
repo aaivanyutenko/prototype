@@ -1,9 +1,9 @@
 package by.collider.draganddrop;
 
-import android.app.Activity;
 import android.content.ClipData;
-import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.view.ViewPager;
 import android.view.DragEvent;
 import android.view.MotionEvent;
 import android.view.View;
@@ -12,32 +12,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
-public class MainActivity extends Activity {
+public class MainActivity extends FragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        LinearLayout cards = (LinearLayout) findViewById(R.id.cards);
-        for (int i = 0; i < cards.getChildCount(); i++) {
-            LinearLayout category = (LinearLayout) cards.getChildAt(i);
-            for (int j = 0; j < category.getChildCount(); j++) {
-                TextView card = (TextView) category.getChildAt(j);
-                card.setOnTouchListener(new View.OnTouchListener() {
-                    @Override
-                    public boolean onTouch(View v, MotionEvent event) {
-                        if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                            ClipData clipData = ClipData.newPlainText("label", "text");
-                            View.DragShadowBuilder dragShadowBuilder = new View.DragShadowBuilder(v);
-                            v.startDrag(clipData, dragShadowBuilder, v, 0);
-                            v.setVisibility(View.INVISIBLE);
-                            return true;
-                        } else {
-                            return false;
-                        }
-                    }
-                });
-            }
-        }
         LinearLayout sentence = (LinearLayout) findViewById(R.id.sentence);
         sentence.setOnDragListener(new View.OnDragListener() {
             @Override
@@ -55,6 +34,9 @@ public class MainActivity extends Activity {
                 return true;
             }
         });
+        CardsPagerAdapter cardsPagerAdapter = new CardsPagerAdapter(getSupportFragmentManager());
+        ViewPager pager = (ViewPager) findViewById(R.id.pager);
+        pager.setAdapter(cardsPagerAdapter);
     }
 
     public void resetClick(View v) {

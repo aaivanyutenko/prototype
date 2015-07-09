@@ -1,0 +1,10 @@
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+          android:layout_width="wrap_content"
+          android:layout_height="50dp"
+          android:background="@drawable/card"
+          android:contentDescription="@string/label_card"
+          android:gravity="center"
+          android:paddingLeft="5dp"
+          android:paddingRight="5dp"
+          android:textColor="@android:color/black"
+          android:textSize="12pt"/>
