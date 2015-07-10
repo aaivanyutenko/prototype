@@ -1,10 +1,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical"
-              android:weightSum="10"
-              tools:context=".MainActivity">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="10"
+    tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,8 +18,7 @@
             android:layout_height="50dp"
             android:layout_weight="13"
             android:background="@drawable/sentence"
-            android:orientation="horizontal">
-        </LinearLayout>
+            android:orientation="horizontal"/>
 
         <TextView
             android:id="@+id/reset"
@@ -29,13 +28,12 @@
             android:background="@color/link_text_material_light"
             android:gravity="center"
             android:onClick="resetClick"
-            android:text="Сброс"
+            android:text="@string/label_reset"
             android:textColor="@android:color/black"
-            android:textSize="7pt"/>
+            android:textSize="7pt" />
     </LinearLayout>
 
-    <android.support.v4.view.ViewPager
-        xmlns:android="http://schemas.android.com/apk/res/android"
+    <android.support.v4.view.ViewPager xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -46,84 +44,11 @@
             android:layout_height="wrap_content"
             android:layout_gravity="top"
             android:background="#33b5e5"
-            android:textColor="#fff"
+            android:paddingBottom="4dp"
             android:paddingTop="4dp"
-            android:paddingBottom="4dp" />
+            android:textColor="#fff"
+            android:textSize="8pt" />
 
     </android.support.v4.view.ViewPager>
-
-    <!--<LinearLayout
-        android:id="@+id/cards"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
-
-        <LinearLayout
-            android:layout_width="50dp"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/card"
-                android:contentDescription="@string/label_card"
-                android:gravity="center"
-                android:text="Я"
-                android:textColor="@android:color/holo_blue_dark"
-                android:textSize="12pt"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="50dp"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/card"
-                android:contentDescription="@string/label_card"
-                android:gravity="center"
-                android:text="хочу"
-                android:textColor="@android:color/holo_blue_dark"
-                android:textSize="10pt"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="50dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/card"
-                android:contentDescription="@string/label_card"
-                android:gravity="center"
-                android:text="есть"
-                android:textColor="@android:color/holo_blue_dark"
-                android:textSize="10pt"/>
-
-            <TextView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/card"
-                android:contentDescription="@string/label_card"
-                android:gravity="center"
-                android:text="спать"
-                android:textColor="@android:color/holo_blue_dark"
-                android:textSize="8pt"/>
-
-            <TextView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/card"
-                android:contentDescription="@string/label_card"
-                android:gravity="center"
-                android:text="играть"
-                android:textColor="@android:color/holo_blue_dark"
-                android:textSize="7pt"/>
-        </LinearLayout>
-
-    </LinearLayout>-->
 
 </LinearLayout>

@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">DragAndDrop</string>
-    <string name="label_card">Card</string>
+    <string name="app_name">Прототип-Ком</string>
+    <string name="label_reset">Сброс</string>
 </resources>

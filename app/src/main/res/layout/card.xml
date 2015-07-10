@@ -1,10 +1,21 @@
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
-          android:layout_width="wrap_content"
-          android:layout_height="50dp"
-          android:background="@drawable/card"
-          android:contentDescription="@string/label_card"
-          android:gravity="center"
-          android:paddingLeft="5dp"
-          android:paddingRight="5dp"
-          android:textColor="@android:color/black"
-          android:textSize="12pt"/>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="100dp"
+    android:layout_height="120dp"
+    android:background="@drawable/card"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/card_image"
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
+
+    <TextView
+        android:id="@+id/card_title"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:gravity="center"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:textColor="@android:color/white"
+        android:textSize="6pt" />
+</LinearLayout>

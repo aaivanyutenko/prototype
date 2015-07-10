@@ -1,6 +1,5 @@
 package by.collider.draganddrop;
 
-import android.content.ClipData;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
@@ -9,10 +8,10 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 
 public class MainActivity extends FragmentActivity {
+    private float swipeY;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +36,21 @@ public class MainActivity extends FragmentActivity {
         CardsPagerAdapter cardsPagerAdapter = new CardsPagerAdapter(getSupportFragmentManager());
         ViewPager pager = (ViewPager) findViewById(R.id.pager);
         pager.setAdapter(cardsPagerAdapter);
+    }
+
+    @Override
+    public boolean onGenericMotionEvent(MotionEvent event) {
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_UP:
+                swipeY = event.getY();
+                break;
+            case MotionEvent.ACTION_DOWN:
+                if ((swipeY - event.getY()) > 150) {
+
+                }
+                break;
+        }
+        return super.onGenericMotionEvent(event);
     }
 
     public void resetClick(View v) {

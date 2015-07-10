@@ -32,8 +32,8 @@ public class PageFragment extends Fragment {
         LinearLayout rootView = (LinearLayout) inflater.inflate(R.layout.page, container, false);
         List<String> values = cardTitles.get(getArguments().getInt("page_position"));
         for (String value : values) {
-            TextView cardView = (TextView) inflater.inflate(R.layout.card, container, false);
-            cardView.setText(value);
+            LinearLayout cardView = (LinearLayout) inflater.inflate(R.layout.card, container, false);
+            ((TextView) cardView.findViewById(R.id.card_title)).setText(value);
             cardView.setOnTouchListener(new View.OnTouchListener() {
                 @Override
                 public boolean onTouch(View v, MotionEvent event) {
@@ -55,7 +55,7 @@ public class PageFragment extends Fragment {
             public boolean onDrag(View v, DragEvent event) {
                 switch (event.getAction()) {
                     case DragEvent.ACTION_DRAG_ENDED:
-                        ((TextView) event.getLocalState()).setVisibility(View.VISIBLE);
+                        ((LinearLayout) event.getLocalState()).setVisibility(View.VISIBLE);
                         break;
                 }
                 return true;
