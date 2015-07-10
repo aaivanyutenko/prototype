@@ -1,4 +1,4 @@
-package by.collider.draganddrop;
+package by.collider.prototype;
 
 import android.content.ClipData;
 import android.os.Bundle;
